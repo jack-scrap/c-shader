@@ -18,25 +18,17 @@ std::vector<SDL_Texture*> tex;
 std::vector<SDL_Rect> rect;
 
 void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
-	int
-		wd,
-		ht;
+	SDL_Surface* surf;
 
-	SDL_Surface* surface;
-	SDL_Color txtCol = {255, 255, 255, 0};
+	surf = TTF_RenderText_Solid(font, txt, {255, 255, 255, 0});
+	*tex = SDL_CreateTextureFromSurface(rend, surf);
 
-	surface = TTF_RenderText_Solid(font, txt, txtCol);
-	*tex = SDL_CreateTextureFromSurface(rend, surface);
-
-	wd = surface->w;
-	ht = surface->h;
-
-	SDL_FreeSurface(surface);
+	SDL_FreeSurface(surf);
 
 	rect->x = x;
 	rect->y = y;
-	rect->w = wd;
-	rect->h = ht;
+	rect->w = surf->w;
+	rect->h = surf->h;
 }
 
 int main() {
