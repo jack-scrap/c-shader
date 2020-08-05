@@ -100,9 +100,5 @@ int main() {
 		SDL_RenderPresent(rend);
 	}
 
-	for (int i = 0; i < 3; i++) {
-		SDL_DestroyTexture(tex[i]);
-	}
-
 	return 0;
 }
