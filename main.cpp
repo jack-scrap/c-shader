@@ -105,11 +105,5 @@ int main() {
 		SDL_DestroyTexture(texture[i]);
 	}
 
-	TTF_Quit();
-
-	SDL_DestroyRenderer(rend);
-	SDL_DestroyWindow(win);
-	SDL_Quit();
-
 	return 0;
 }
