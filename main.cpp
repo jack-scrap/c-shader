@@ -55,7 +55,7 @@ int main() {
 
 	char* name = "terminus.bdf";
 
-	SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO);
+	SDL_Init(SDL_INIT_VIDEO);
 	SDL_CreateWindowAndRenderer(wd, ht, 0, &win, &rend);
 
 	// text
