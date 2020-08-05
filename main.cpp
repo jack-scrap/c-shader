@@ -8,10 +8,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-int
-	wd = 800,
-	ht = 600;
-
 std::vector<SDL_Texture*> tex;
 std::vector<SDL_Rect> rect;
 
@@ -46,7 +42,7 @@ int main() {
 	char* name = "terminus.bdf";
 
 	SDL_Init(SDL_INIT_VIDEO);
-	SDL_CreateWindowAndRenderer(wd, ht, 0, &win, &rend);
+	SDL_CreateWindowAndRenderer(800, 600, 0, &win, &rend);
 
 	// text
 	TTF_Init();
