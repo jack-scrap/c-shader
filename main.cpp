@@ -72,6 +72,12 @@ int main() {
 
 	SDL_SetRenderDrawColor(rend, 0, 0, 0, 0);
 
+	SDL_RenderClear(rend);
+
+	for (int i = 0; i < word.size(); i++) {
+		SDL_RenderCopy(rend, tex[i], NULL, &rect[i]);
+	}
+
 	int open = true;
 	SDL_Event e;
 	while (open) {
@@ -79,12 +85,6 @@ int main() {
 			if (e.type == SDL_QUIT) {
 				open = false;
 			}
-		}
-
-		SDL_RenderClear(rend);
-
-		for (int i = 0; i < word.size(); i++) {
-			SDL_RenderCopy(rend, tex[i], NULL, &rect[i]);
 		}
 
 		SDL_RenderPresent(rend);
