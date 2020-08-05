@@ -8,13 +8,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-std::vector<SDL_Texture*> tex;
-std::vector<SDL_Rect> rect;
-
 void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
-	SDL_Surface* surf;
-
-	surf = TTF_RenderText_Solid(font, txt, {255, 255, 255, 0});
+	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {255, 255, 255, 0});
 	*tex = SDL_CreateTextureFromSurface(rend, surf);
 
 	SDL_FreeSurface(surf);
@@ -26,9 +21,25 @@ void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, 
 }
 
 int main() {
-	SDL_Renderer* rend;
+	// window
+	SDL_Init(SDL_INIT_VIDEO);
 
-	for (int i = 0; i < 3; i++) {
+	SDL_Window* win;
+	SDL_Renderer* rend;
+	SDL_CreateWindowAndRenderer(800, 600, 0, &win, &rend);
+
+	// text
+	TTF_Init();
+	TTF_Font* font = TTF_OpenFont("terminus.bdf", 24);
+
+	std::vector<std::string> word = {
+		"asdf",
+		"hjkl"
+	};
+
+	std::vector<SDL_Texture*> tex;
+	std::vector<SDL_Rect> rect;
+	for (int i = 0; i < word.size(); i++) {
 		SDL_Texture* tmpTex;
 		tex.push_back(tmpTex);
 
@@ -36,22 +47,6 @@ int main() {
 		rect.push_back(tmpRect);
 	}
 
-	// window
-	SDL_Window* win;
-
-	char* name = "terminus.bdf";
-
-	SDL_Init(SDL_INIT_VIDEO);
-	SDL_CreateWindowAndRenderer(800, 600, 0, &win, &rend);
-
-	// text
-	TTF_Init();
-	TTF_Font* font = TTF_OpenFont(name, 24);
-
-	std::vector<std::string> word = {
-		"asdf",
-		"hjkl"
-	};
 	for (int i = 0; i < word.size(); i++) {
 		getTxtAndRect(rend, 0, i * 32, (char*) word[i].c_str(), font, &tex[i], &rect[i]);
 	}
