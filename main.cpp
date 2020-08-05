@@ -55,8 +55,6 @@ void get_txt_and_rect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* fon
 int main() {
 	std::vector<std::string> word = rd("intro");
 
-	SDL_Event event;
-
 	SDL_Renderer* rend;
 
 	for (int i = 0; i < 3; i++) {
@@ -83,15 +81,17 @@ int main() {
 		get_txt_and_rect(rend, 0, i * 32, (char*) word[i].c_str(), font, &texture[i], &rectangle[i]);
 	}
 
-	int running = true;
-	while (running) {
-		while (SDL_PollEvent(&event)) {
-			if (event.type == SDL_QUIT) {
-				running = false;
+	SDL_SetRenderDrawColor(rend, 0, 0, 0, 0);
+
+	int open = true;
+	SDL_Event e;
+	while (open) {
+		while (SDL_PollEvent(&e)) {
+			if (e.type == SDL_QUIT) {
+				open = false;
 			}
 		}
 
-		SDL_SetRenderDrawColor(rend, 0, 0, 0, 0);
 		SDL_RenderClear(rend);
 
 		for (int i = 0; i < word.size(); i++) {
