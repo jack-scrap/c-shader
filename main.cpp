@@ -13,8 +13,8 @@ const static unsigned int ht = 32;
 std::vector<SDL_Texture*> tex;
 std::vector<SDL_Rect> rect;
 
-void blit(SDL_Renderer* rend, TTF_Font* font, char* str, unsigned int i) {
-	SDL_Surface* surf = TTF_RenderText_Solid(font, str, {
+void blit(SDL_Renderer* rend, TTF_Font* font, std::string str, unsigned int i) {
+	SDL_Surface* surf = TTF_RenderText_Solid(font, str.c_str(), {
 		255, 255, 255
 	});
 
@@ -45,7 +45,7 @@ int main() {
 	};
 
 	for (int i = 0; i < buff.size(); i++) {
-		blit(rend, font, (char*) buff[i].c_str(), i);
+		blit(rend, font, buff[i], i);
 	}
 
 	SDL_RenderClear(rend);
