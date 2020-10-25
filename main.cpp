@@ -10,16 +10,19 @@
 
 const static unsigned int ht = 32;
 
-void blit(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
+std::vector<SDL_Texture*> tex;
+std::vector<SDL_Rect> rect;
+
+void blit(SDL_Renderer* rend, int i, char* txt, TTF_Font* font) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {
 		255, 255, 255
 	});
-	*tex = SDL_CreateTextureFromSurface(rend, surf);
+	tex[i] = SDL_CreateTextureFromSurface(rend, surf);
 
-	rect->x = 0;
-	rect->y = i * ht;
-	rect->w = surf->w;
-	rect->h = surf->h;
+	rect[i].x = 0;
+	rect[i].y = i * ht;
+	rect[i].w = surf->w;
+	rect[i].h = surf->h;
 }
 
 int main() {
@@ -38,8 +41,6 @@ int main() {
 		"hjkl"
 	};
 
-	std::vector<SDL_Texture*> tex;
-	std::vector<SDL_Rect> rect;
 	for (int i = 0; i < buff.size(); i++) {
 		SDL_Texture* tmpTex;
 		tex.push_back(tmpTex);
@@ -49,7 +50,7 @@ int main() {
 	}
 
 	for (int i = 0; i < buff.size(); i++) {
-		blit(rend, i, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
+		blit(rend, i, (char*) buff[i].c_str(), font);
 	}
 
 	SDL_RenderClear(rend);
