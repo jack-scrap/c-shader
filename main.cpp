@@ -44,13 +44,14 @@ int main() {
 		"hjkl"
 	};
 
-	// draw
+	// render
 	SDL_RenderClear(rend);
 
 	for (int i = 0; i < buff.size(); i++) {
 		draw(rend, font, buff[i], i);
 	}
 
+	// draw
 	for (int i = 0; i < buff.size(); i++) {
 		SDL_RenderCopy(rend, tex[i], NULL, &rect[i]);
 	}
