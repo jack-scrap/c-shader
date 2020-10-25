@@ -56,8 +56,6 @@ int main() {
 		getTxtAndRect(rend, i, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
 	}
 
-	SDL_SetRenderDrawColor(rend, 0, 0, 0, 0);
-
 	SDL_RenderClear(rend);
 
 	for (int i = 0; i < buff.size(); i++) {
