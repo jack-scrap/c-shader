@@ -16,8 +16,6 @@ void blit(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Texture** te
 	});
 	*tex = SDL_CreateTextureFromSurface(rend, surf);
 
-	SDL_FreeSurface(surf);
-
 	rect->x = 0;
 	rect->y = i * ht;
 	rect->w = surf->w;
