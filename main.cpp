@@ -10,7 +10,7 @@
 
 const static unsigned int ht = 32;
 
-void getTxtAndRect(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
+void blit(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {
 		255, 255, 255
 	});
@@ -51,7 +51,7 @@ int main() {
 	}
 
 	for (int i = 0; i < buff.size(); i++) {
-		getTxtAndRect(rend, i, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
+		blit(rend, i, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
 	}
 
 	SDL_RenderClear(rend);
