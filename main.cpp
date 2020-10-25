@@ -10,8 +10,7 @@
 
 void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {
-		255, 255, 255,
-		0
+		255, 255, 255
 	});
 	*tex = SDL_CreateTextureFromSurface(rend, surf);
 
