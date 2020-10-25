@@ -8,7 +8,9 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
+const static unsigned int ht = 32;
+
+void getTxtAndRect(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Texture** tex, SDL_Rect* rect) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {
 		255, 255, 255
 	});
@@ -16,8 +18,8 @@ void getTxtAndRect(SDL_Renderer* rend, int x, int y, char* txt, TTF_Font* font, 
 
 	SDL_FreeSurface(surf);
 
-	rect->x = x;
-	rect->y = y;
+	rect->x = 0;
+	rect->y = i * ht;
 	rect->w = surf->w;
 	rect->h = surf->h;
 }
@@ -32,8 +34,6 @@ int main() {
 
 	// text
 	TTF_Init();
-
-	const static unsigned int ht = 32;
 
 	TTF_Font* font = TTF_OpenFont("terminus.bdf", 24);
 
@@ -53,7 +53,7 @@ int main() {
 	}
 
 	for (int i = 0; i < buff.size(); i++) {
-		getTxtAndRect(rend, 0, i * ht, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
+		getTxtAndRect(rend, i, (char*) buff[i].c_str(), font, &tex[i], &rect[i]);
 	}
 
 	SDL_SetRenderDrawColor(rend, 0, 0, 0, 0);
