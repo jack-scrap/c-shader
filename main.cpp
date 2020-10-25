@@ -17,12 +17,15 @@ void blit(SDL_Renderer* rend, int i, char* txt, TTF_Font* font) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, txt, {
 		255, 255, 255
 	});
-	tex[i] = SDL_CreateTextureFromSurface(rend, surf);
 
-	rect[i].x = 0;
-	rect[i].y = i * ht;
-	rect[i].w = surf->w;
-	rect[i].h = surf->h;
+	tex.push_back(SDL_CreateTextureFromSurface(rend, surf));
+
+	rect.push_back(SDL_Rect{
+		0,
+		i * ht,
+		surf->w,
+		surf->h
+	});
 }
 
 int main() {
@@ -40,14 +43,6 @@ int main() {
 		"asdf",
 		"hjkl"
 	};
-
-	for (int i = 0; i < buff.size(); i++) {
-		SDL_Texture* tmpTex;
-		tex.push_back(tmpTex);
-
-		SDL_Rect tmpRect;
-		rect.push_back(tmpRect);
-	}
 
 	for (int i = 0; i < buff.size(); i++) {
 		blit(rend, i, (char*) buff[i].c_str(), font);
