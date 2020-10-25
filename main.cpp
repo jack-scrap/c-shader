@@ -13,7 +13,7 @@ const static unsigned int ht = 32;
 std::vector<SDL_Texture*> tex;
 std::vector<SDL_Rect> rect;
 
-void blit(SDL_Renderer* rend, TTF_Font* font, std::string str, unsigned int i) {
+void draw(SDL_Renderer* rend, TTF_Font* font, std::string str, unsigned int i) {
 	SDL_Surface* surf = TTF_RenderText_Solid(font, str.c_str(), {
 		255, 255, 255
 	});
@@ -44,11 +44,12 @@ int main() {
 		"hjkl"
 	};
 
-	for (int i = 0; i < buff.size(); i++) {
-		blit(rend, font, buff[i], i);
-	}
-
+	// draw
 	SDL_RenderClear(rend);
+
+	for (int i = 0; i < buff.size(); i++) {
+		draw(rend, font, buff[i], i);
+	}
 
 	for (int i = 0; i < buff.size(); i++) {
 		SDL_RenderCopy(rend, tex[i], NULL, &rect[i]);
