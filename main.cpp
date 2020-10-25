@@ -26,8 +26,6 @@ void getTxtAndRect(SDL_Renderer* rend, int i, char* txt, TTF_Font* font, SDL_Tex
 
 int main() {
 	// window
-	SDL_Init(SDL_INIT_VIDEO);
-
 	SDL_Window* win;
 	SDL_Renderer* rend;
 	SDL_CreateWindowAndRenderer(800, 600, 0, &win, &rend);
