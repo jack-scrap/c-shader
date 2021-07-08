@@ -1,5 +1,17 @@
-ogl = -lGL -lGLEW
-sdl = -lSDL2
+CXX=g++
 
-make: main.cpp
-	g++ main.cpp $(ogl) $(sdl)
+LDFLAGS+=-lGL -lGLEW
+LDFLAGS+=-lSDL2
+
+.PHONY: clean
+
+all: make
+
+main.o: main.cpp
+	$(CXX) -c $< -o $@
+
+make: main.o
+	$(CXX) $^ $(LDFLAGS)
+
+clean:
+	rm *.o a.out
