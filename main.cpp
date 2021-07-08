@@ -1,10 +1,3 @@
-#include <stdlib.h>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <fstream>
-#include <iostream>
-
 #include <SDL2/SDL.h>
 
 int main() {
