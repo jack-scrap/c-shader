@@ -1,4 +1,4 @@
-CXX=g++
+CC=gcc
 
 LDFLAGS+=-lGL -lGLEW
 LDFLAGS+=-lSDL2
@@ -7,11 +7,11 @@ LDFLAGS+=-lSDL2
 
 all: make
 
-main.o: main.cpp
-	$(CXX) -c $< -o $@
+main.o: main.c
+	$(CC) -c $< -o $@
 
 make: main.o
-	$(CXX) $^ $(LDFLAGS)
+	$(CC) $^ $(LDFLAGS)
 
 clean:
 	rm *.o a.out

@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <stdbool.h>
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, 800, 600, 0);
