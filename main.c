@@ -32,10 +32,19 @@ int main() {
 	unsigned char data[res[Y]][res[X]][3 + 1];
 	for (int y = 0; y < res[Y]; y++) {
 					for (int x = 0; x < res[X]; x++) {
+									data[y][x][0] = 0;
+									data[y][x][1] = 0;
+									data[y][x][2] = 0;
+									data[y][x][3] = 255;
+					}
+	}
+
+	for (int y = 0; y < 30; y++) {
+					for (int x = 0; x < 70; x++) {
 									data[y][x][0] = 255;
 									data[y][x][1] = 0;
 									data[y][x][2] = 0;
-									data[y][x][3] = 0;
+									data[y][x][3] = 255;
 					}
 	}
 
