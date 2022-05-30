@@ -1,6 +1,11 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
+typedef struct {
+				unsigned int _x;
+				unsigned int _y;
+} Coord;
+
 const unsigned int res[2] = {
 				800,
 				600
@@ -15,6 +20,21 @@ uint32_t rmask = 0xff000000;
 uint32_t gmask = 0x00ff0000;
 uint32_t bmask = 0x0000ff00;
 uint32_t amask = 0x000000ff;
+
+int writePix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st) {
+				if (!(st._x <= res[X] && st._y <= res[Y])) {
+								printf("Error\n");
+
+								return 1;
+				}
+
+					data[st._y][st._x][0] = 255;
+					data[st._y][st._x][1] = 0;
+					data[st._y][st._x][2] = 0;
+					data[st._y][st._x][3] = 255;
+
+					return 0;
+}
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -42,10 +62,11 @@ int main() {
 
 	for (int y = 0; y < 30; y++) {
 					for (int x = 0; x < 70; x++) {
-									data[y][x][0] = 255;
-									data[y][x][1] = 0;
-									data[y][x][2] = 0;
-									data[y][x][3] = 255;
+									Coord st = {
+													x,
+													y
+									};
+									writePix(data, st);
 					}
 	}
 
