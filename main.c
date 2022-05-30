@@ -48,7 +48,7 @@ int main() {
 					}
 	}
 
-	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom((void*) data, res[X], res[Y], 32, 4 * res[X], rmask, gmask, bmask, amask);
+	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom((void*) data, res[X], res[Y], 32, (3 + 1) * res[X], rmask, gmask, bmask, amask);
 
 	SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
 
