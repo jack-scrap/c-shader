@@ -1,3 +1,5 @@
+SH=/bin/bash
+
 CC=gcc
 
 BUILDDIR=build
