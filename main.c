@@ -21,7 +21,7 @@ uint32_t gmask = 0x00ff0000;
 uint32_t bmask = 0x0000ff00;
 uint32_t amask = 0x000000ff;
 
-int writePix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st) {
+int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st) {
 				if (!(st._x <= res[X] && st._y <= res[Y])) {
 								printf("Error\n");
 
@@ -66,7 +66,7 @@ int main() {
 													x,
 													y
 									};
-									writePix(data, st);
+									blitPix(data, st);
 					}
 	}
 
