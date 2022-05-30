@@ -66,7 +66,10 @@ int main() {
 													x,
 													y
 									};
-									blitPix(data, st);
+
+									if (blitPix(data, st)) {
+													printf("Error");
+									}
 					}
 	}
 
