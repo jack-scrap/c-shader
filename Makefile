@@ -4,8 +4,7 @@ CC=gcc
 
 BUILDDIR=build
 
-LDFLAGS+=-lGL -lGLEW
-LDFLAGS+=-lSDL2
+LDFLAGS=-lGL -lGLEW -lSDL2
 
 .PHONY: all
 all: mk_build make
