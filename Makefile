@@ -7,7 +7,7 @@ BUILDDIR=build
 LDFLAGS+=-lGL -lGLEW
 LDFLAGS+=-lSDL2
 
-.PHONY: mk_build clean
+.PHONY: all mk_build make clean
 
 all: mk_build make
 
