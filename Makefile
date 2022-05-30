@@ -1,17 +1,22 @@
 CC=gcc
 
+BUILDDIR=build
+
 LDFLAGS+=-lGL -lGLEW
 LDFLAGS+=-lSDL2
 
-.PHONY: clean
+.PHONY: mk_build clean
 
-all: make
+all: mk_build make
 
-main.o: main.c
+$(BUILDDIR)/main.o: main.c
 	$(CC) -c $< -o $@
 
-make: main.o
+make: $(BUILDDIR)/main.o
 	$(CC) $^ $(LDFLAGS)
 
+mk_build:
+	mkdir -p $(BUILDDIR)
+
 clean:
-	rm *.o a.out
+	rm $(BUILDDIR)/*.o a.out
