@@ -60,8 +60,8 @@ int main() {
 					}
 	}
 
-	for (int y = 0; y < 30; y++) {
-					for (int x = 0; x < 70; x++) {
+	for (int y = 0; y < 70; y++) {
+					for (int x = 0; x < 30; x++) {
 									Coord st = {
 													x,
 													y
