@@ -6,6 +6,13 @@ typedef struct {
 				unsigned int _y;
 } Coord;
 
+typedef struct {
+				unsigned int _r;
+				unsigned int _g;
+				unsigned int _b;
+				unsigned int _a;
+} Col;
+
 const unsigned int res[2] = {
 				800,
 				600
@@ -21,17 +28,17 @@ uint32_t gmask = 0x00ff0000;
 uint32_t bmask = 0x0000ff00;
 uint32_t amask = 0x000000ff;
 
-int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st) {
+int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 				if (!(st._x <= res[X] && st._y <= res[Y])) {
 								printf("Error\n");
 
 								return 1;
 				}
 
-					data[st._y][st._x][0] = 255;
-					data[st._y][st._x][1] = 0;
-					data[st._y][st._x][2] = 0;
-					data[st._y][st._x][3] = 255;
+					data[st._y][st._x][0] = col._r;
+					data[st._y][st._x][1] = col._g;
+					data[st._y][st._x][2] = col._b;
+					data[st._y][st._x][3] = col._a;
 
 					return 0;
 }
@@ -60,6 +67,13 @@ int main() {
 					}
 	}
 
+	Col red = {
+					255,
+					0,
+					0,
+					255
+	};
+
 	for (int y = 0; y < 70; y++) {
 					for (int x = 0; x < 30; x++) {
 									Coord st = {
@@ -67,7 +81,7 @@ int main() {
 													y
 									};
 
-									if (blitPix(data, st)) {
+									if (blitPix(data, st, red)) {
 													printf("Error");
 									}
 					}
