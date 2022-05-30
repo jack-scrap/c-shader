@@ -7,18 +7,20 @@ BUILDDIR=build
 LDFLAGS+=-lGL -lGLEW
 LDFLAGS+=-lSDL2
 
-.PHONY: all mk_build make clean
-
+.PHONY: all
 all: mk_build make
 
 $(BUILDDIR)/main.o: main.c
 	$(CC) -c $< -o $@
 
+.PHONY: make
 make: $(BUILDDIR)/main.o
 	$(CC) $^ $(LDFLAGS)
 
+.PHONY: mk_build
 mk_build:
 	mkdir -p $(BUILDDIR)
 
+.PHONY: clean
 clean:
 	rm $(BUILDDIR)/*.o a.out
