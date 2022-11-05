@@ -82,7 +82,7 @@ int main() {
 			};
 
 			if (blitPix(data, st, red)) {
-				printf("Error");
+				printf("Error\n");
 			}
 		}
 	}
