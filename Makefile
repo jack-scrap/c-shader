@@ -20,7 +20,7 @@ $(BUILDDIR)/%.o: %.c
 	$(CC) -c $< -o $@
 
 $(EXEC): $(BUILDDIR)/main.o $(HDRS)
-	$(CC) $< $(LDFLAGS) -o $@
+	$(CC) $< -o $@ $(LDFLAGS) 
 
 .PHONY: mk_build
 mk_build:
