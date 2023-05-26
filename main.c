@@ -30,6 +30,20 @@ uint32_t gmask = 0x00ff0000;
 uint32_t bmask = 0x0000ff00;
 uint32_t amask = 0x000000ff;
 
+Col black = {
+	0,
+	0,
+	0,
+	255
+};
+
+Col red = {
+	255,
+	0,
+	0,
+	255
+};
+
 const unsigned int res[2] = {
 	800,
 	600
@@ -64,13 +78,6 @@ int main() {
 	};
 
 	// Clear
-	Col black = {
-		0,
-		0,
-		0,
-		255
-	};
-
 	unsigned char data[res[Y]][res[X]][3 + 1];
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
@@ -80,13 +87,6 @@ int main() {
 			data[y][x][A] = black._a;
 		}
 	}
-
-	Col red = {
-		255,
-		0,
-		0,
-		255
-	};
 
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
