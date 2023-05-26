@@ -49,8 +49,6 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col
 				pos._y + y
 			};
 
-			unsigned int i = coordToIdx(st, sz) * (3 + 1);
-
 			if (blitPix(data, st, col)) {
 				err("Couldn't blit pixel");
 			}
