@@ -49,9 +49,13 @@ const unsigned int res[2] = {
 	600
 };
 
+void err(char* msg) {
+	fprintf(stderr, "%s\n", msg);
+}
+
 int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	if (!(st._x <= res[X] && st._y <= res[Y])) {
-		printf("Error\n");
+		err("Pixel coordinate out of range");
 
 		return 1;
 	}
@@ -96,7 +100,7 @@ int main() {
 			};
 
 			if (blitPix(data, st, red)) {
-				printf("Error\n");
+				err("Couldn't blit pixel");
 			}
 		}
 	}
