@@ -9,14 +9,13 @@ BUILDDIR=build
 LDFLAGS=-lGL -lGLEW -lSDL2
 
 .PHONY: all
-all: mk_build make
+all: mk_build $(EXEC)
 
 $(BUILDDIR)/main.o: main.c
 	$(CC) -c $< -o $@
 
-.PHONY: make
-make: $(BUILDDIR)/main.o math.h
-	$(CC) $< $(LDFLAGS) -o $(EXEC)
+$(EXEC): $(BUILDDIR)/main.o math.h
+	$(CC) $< $(LDFLAGS) -o $@
 
 .PHONY: mk_build
 mk_build:
