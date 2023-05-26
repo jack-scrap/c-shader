@@ -49,6 +49,24 @@ unsigned int coordToIdx(Coord st, Coord bound) {
 	return (st._y * bound._x) + st._x;
 }
 
+int clear(unsigned char data[res[Y]][res[X]][3 + 1], Coord bound) {
+	for (int y = 0; y < bound._y; y++) {
+		for (int x = 0; x < bound._x; x++) {
+			Coord st = {
+				x,
+				y
+			};
+
+			unsigned int i = coordToIdx(st, bound) * (3 + 1);
+
+			data[st._y][st._x][R] = black._r;
+			data[st._y][st._x][G] = black._g;
+			data[st._y][st._x][B] = black._b;
+			data[st._y][st._x][A] = black._a;
+		}
+	}
+}
+
 int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	if (!(st._x <= res[X] && st._y <= res[Y])) {
 		err("Pixel coordinate out of range");
@@ -79,14 +97,12 @@ int main() {
 
 	// Clear
 	unsigned char data[res[Y]][res[X]][3 + 1];
-	for (int y = 0; y < res[Y]; y++) {
-		for (int x = 0; x < res[X]; x++) {
-			data[y][x][R] = black._r;
-			data[y][x][G] = black._g;
-			data[y][x][B] = black._b;
-			data[y][x][A] = black._a;
-		}
-	}
+
+	Coord bound = {
+		res[X],
+		res[Y]
+	};
+	clear(data, bound);
 
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
