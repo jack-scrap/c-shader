@@ -45,7 +45,7 @@ void err(char* msg) {
 	fprintf(stderr, "%s\n", msg);
 }
 
-unsigned int coordtoIdx(Coord st, Coord bound) {
+unsigned int coordToIdx(Coord st, Coord bound) {
 	return (st._y * bound._x) + st._x;
 }
 
