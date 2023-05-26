@@ -64,13 +64,20 @@ int main() {
 	};
 
 	// Clear
+	Col black = {
+		0,
+		0,
+		0,
+		255
+	};
+
 	unsigned char data[res[Y]][res[X]][3 + 1];
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
-			data[y][x][R] = 0;
-			data[y][x][G] = 0;
-			data[y][x][B] = 0;
-			data[y][x][A] = 255;
+			data[y][x][R] = black._r;
+			data[y][x][G] = black._g;
+			data[y][x][B] = black._b;
+			data[y][x][A] = black._a;
 		}
 	}
 
