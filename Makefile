@@ -11,7 +11,7 @@ LDFLAGS=-lGL -lGLEW -lSDL2
 SRCS=main.c
 OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
 
-HDRS=math.h
+HDRS=math.h col.h
 
 .PHONY: all
 all: mk_build $(EXEC)
