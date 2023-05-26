@@ -1,10 +1,7 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
-typedef enum {
-	X,
-	Y
-} axis_t;
+#include "math.h"
 
 enum {
 	R,
@@ -12,11 +9,6 @@ enum {
 	B,
 	A
 } chan_t;
-
-typedef struct {
-	unsigned int _x;
-	unsigned int _y;
-} Coord;
 
 typedef struct {
 	unsigned int _r;

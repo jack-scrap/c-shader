@@ -13,8 +13,8 @@ $(BUILDDIR)/main.o: main.c
 	$(CC) -c $< -o $@
 
 .PHONY: make
-make: $(BUILDDIR)/main.o
-	$(CC) $^ $(LDFLAGS) -o blit
+make: $(BUILDDIR)/main.o math.h
+	$(CC) $< $(LDFLAGS) -o blit
 
 .PHONY: mk_build
 mk_build:
