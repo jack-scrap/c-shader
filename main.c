@@ -1,6 +1,11 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
+enum {
+	X,
+	Y
+};
+
 typedef struct {
 	unsigned int _x;
 	unsigned int _y;
@@ -13,20 +18,15 @@ typedef struct {
 	unsigned int _a;
 } Col;
 
-const unsigned int res[2] = {
-	800,
-	600
-};
-
-enum {
-	X,
-	Y
-};
-
 uint32_t rmask = 0xff000000;
 uint32_t gmask = 0x00ff0000;
 uint32_t bmask = 0x0000ff00;
 uint32_t amask = 0x000000ff;
+
+const unsigned int res[2] = {
+	800,
+	600
+};
 
 int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	if (!(st._x <= res[X] && st._y <= res[Y])) {
