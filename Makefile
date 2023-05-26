@@ -14,7 +14,7 @@ $(BUILDDIR)/main.o: main.c
 
 .PHONY: make
 make: $(BUILDDIR)/main.o
-	$(CC) $^ $(LDFLAGS)
+	$(CC) $^ $(LDFLAGS) -o blit
 
 .PHONY: mk_build
 mk_build:
@@ -22,4 +22,4 @@ mk_build:
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o a.out
+	rm $(BUILDDIR)/*.o blit
