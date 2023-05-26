@@ -6,6 +6,13 @@ enum {
 	Y
 };
 
+enum {
+	R,
+	G,
+	B,
+	A
+};
+
 typedef struct {
 	unsigned int _x;
 	unsigned int _y;
@@ -35,10 +42,10 @@ int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 		return 1;
 	}
 
-	data[st._y][st._x][0] = col._r;
-	data[st._y][st._x][1] = col._g;
-	data[st._y][st._x][2] = col._b;
-	data[st._y][st._x][3] = col._a;
+	data[st._y][st._x][R] = col._r;
+	data[st._y][st._x][G] = col._g;
+	data[st._y][st._x][B] = col._b;
+	data[st._y][st._x][A] = col._a;
 
 	return 0;
 }
@@ -60,10 +67,10 @@ int main() {
 	unsigned char data[res[Y]][res[X]][3 + 1];
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
-			data[y][x][0] = 0;
-			data[y][x][1] = 0;
-			data[y][x][2] = 0;
-			data[y][x][3] = 255;
+			data[y][x][R] = 0;
+			data[y][x][G] = 0;
+			data[y][x][B] = 0;
+			data[y][x][A] = 255;
 		}
 	}
 
