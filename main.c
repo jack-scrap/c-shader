@@ -82,7 +82,12 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord bound, Col col) {
 	}
 }
 
-int clear(unsigned char data[res[Y]][res[X]][3 + 1], Coord bound) {
+int clear(unsigned char data[res[Y]][res[X]][3 + 1]) {
+	Coord bound = {
+		res[X],
+		res[Y]
+	};
+
 	blitRect(data, bound, black);
 }
 
@@ -102,11 +107,7 @@ int main() {
 	// Clear
 	unsigned char data[res[Y]][res[X]][3 + 1];
 
-	Coord bound = {
-		res[X],
-		res[Y]
-	};
-	clear(data, bound);
+	clear(data);
 
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
