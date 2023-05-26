@@ -1,5 +1,7 @@
 SH=/bin/bash
 
+EXEC=blit
+
 CC=gcc
 
 BUILDDIR=build
@@ -14,7 +16,7 @@ $(BUILDDIR)/main.o: main.c
 
 .PHONY: make
 make: $(BUILDDIR)/main.o math.h
-	$(CC) $< $(LDFLAGS) -o blit
+	$(CC) $< $(LDFLAGS) -o $(EXEC)
 
 .PHONY: mk_build
 mk_build:
@@ -22,4 +24,4 @@ mk_build:
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o blit
+	rm $(BUILDDIR)/*.o $(EXEC)
