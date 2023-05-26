@@ -3,15 +3,12 @@
 
 #include "math.h"
 #include "col.h"
+#include "err.h"
 
 const unsigned int res[2] = {
 	800,
 	600
 };
-
-void err(char* msg) {
-	fprintf(stderr, "%s\n", msg);
-}
 
 unsigned int coordToIdx(Coord st, Coord bound) {
 	return (st._y * bound._x) + st._x;
