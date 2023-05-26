@@ -53,6 +53,10 @@ void err(char* msg) {
 	fprintf(stderr, "%s\n", msg);
 }
 
+unsigned int coordtoIdx(Coord st, Coord bound) {
+	return (st._y * bound._x) + st._x;
+}
+
 int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	if (!(st._x <= res[X] && st._y <= res[Y])) {
 		err("Pixel coordinate out of range");
