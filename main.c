@@ -56,7 +56,7 @@ int main() {
 		res[Y]
 	};
 
-	// clear
+	// Clear
 	unsigned char data[res[Y]][res[X]][3 + 1];
 	for (int y = 0; y < res[Y]; y++) {
 		for (int x = 0; x < res[X]; x++) {
