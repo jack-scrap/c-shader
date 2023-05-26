@@ -9,6 +9,7 @@ BUILDDIR=build
 LDFLAGS=-lGL -lGLEW -lSDL2
 
 SRCS=main.c
+OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
 
 HDRS=math.h
 
@@ -27,4 +28,4 @@ mk_build:
 
 .PHONY: clean
 clean:
-	rm $(BUILDDIR)/*.o $(EXEC)
+	rm $(OBJS) $(EXEC)
