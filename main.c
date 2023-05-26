@@ -56,6 +56,8 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col
 			}
 		}
 	}
+
+	return 0;
 }
 
 int clear(unsigned char data[res[Y]][res[X]][3 + 1]) {
@@ -76,6 +78,8 @@ int clear(unsigned char data[res[Y]][res[X]][3 + 1]) {
 	};
 
 	blitRect(data, bound, origin, black);
+
+	return 0;
 }
 
 int main() {
