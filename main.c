@@ -74,8 +74,8 @@ int main() {
 		255
 	};
 
-	for (int y = 0; y < 70; y++) {
-		for (int x = 0; x < 30; x++) {
+	for (int y = 0; y < res[1]; y++) {
+		for (int x = 0; x < res[0]; x++) {
 			Coord st = {
 				x,
 				y
