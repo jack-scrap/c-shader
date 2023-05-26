@@ -8,13 +8,17 @@ BUILDDIR=build
 
 LDFLAGS=-lGL -lGLEW -lSDL2
 
+SRCS=main.c
+
+HDRS=math.h
+
 .PHONY: all
 all: mk_build $(EXEC)
 
-$(BUILDDIR)/main.o: main.c
+$(BUILDDIR)/%.o: %.c
 	$(CC) -c $< -o $@
 
-$(EXEC): $(BUILDDIR)/main.o math.h
+$(EXEC): $(BUILDDIR)/main.o $(HDRS)
 	$(CC) $< $(LDFLAGS) -o $@
 
 .PHONY: mk_build
