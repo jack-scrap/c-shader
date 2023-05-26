@@ -1,17 +1,17 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
-enum {
+typedef enum {
 	X,
 	Y
-};
+} axis_t;
 
 enum {
 	R,
 	G,
 	B,
 	A
-};
+} chan_t;
 
 typedef struct {
 	unsigned int _x;
