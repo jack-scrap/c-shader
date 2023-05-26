@@ -74,10 +74,9 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord bound, Col col) {
 
 			unsigned int i = coordToIdx(st, bound) * (3 + 1);
 
-			data[st._y][st._x][R] = col._r;
-			data[st._y][st._x][G] = col._g;
-			data[st._y][st._x][B] = col._b;
-			data[st._y][st._x][A] = col._a;
+			if (blitPix(data, st, col)) {
+				err("Couldn't blit pixel");
+			}
 		}
 	}
 }
@@ -108,19 +107,6 @@ int main() {
 	unsigned char data[res[Y]][res[X]][3 + 1];
 
 	clear(data);
-
-	for (int y = 0; y < res[Y]; y++) {
-		for (int x = 0; x < res[X]; x++) {
-			Coord st = {
-				x,
-				y
-			};
-
-			if (blitPix(data, st, red)) {
-				err("Couldn't blit pixel");
-			}
-		}
-	}
 
 	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (3 + 1) * 8, (3 + 1) * res[X], rmask, gmask, bmask, amask);
 
