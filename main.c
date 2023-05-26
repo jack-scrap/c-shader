@@ -29,15 +29,15 @@ int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	return 0;
 }
 
-int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord bound, Col col) {
-	for (int y = 0; y < bound._y; y++) {
-		for (int x = 0; x < bound._x; x++) {
+int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Col col) {
+	for (int y = 0; y < sz._y; y++) {
+		for (int x = 0; x < sz._x; x++) {
 			Coord st = {
 				x,
 				y
 			};
 
-			unsigned int i = coordToIdx(st, bound) * (3 + 1);
+			unsigned int i = coordToIdx(st, sz) * (3 + 1);
 
 			if (blitPix(data, st, col)) {
 				err("Couldn't blit pixel");
