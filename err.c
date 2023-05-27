@@ -2,8 +2,8 @@
 
 #include "err.h"
 
-void err(err_t err) {
-	switch (err) {
+void err(err_t e) {
+	switch (e) {
 		case ERR_NULL_PTR:
 			fprintf(stderr, "%s\n", "Attempt to operate on null pointer");
 
@@ -16,6 +16,16 @@ void err(err_t err) {
 
 		case ERR_BLIT_PIX:
 			fprintf(stderr, "%s\n", "Couldn't blit pixel");
+
+			break;
+
+		case ERR_ENUM_INVALID:
+			fprintf(stderr, "%s\n", "Invalid enumeration");
+
+			break;
+
+		default:
+			err(ERR_ENUM_INVALID);
 
 			break;
 	};
