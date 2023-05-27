@@ -93,7 +93,7 @@ int main() {
 
 	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (3 + 1) * 8, (3 + 1) * res[X], rmask, gmask, bmask, amask);
 
-	SDL_Rect rect = {
+	const SDL_Rect rect = {
 		0,
 		0,
 		res[X],
