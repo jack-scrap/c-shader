@@ -12,10 +12,6 @@ const unsigned int res[2] = {
 	600
 };
 
-unsigned int coordToIdx(Coord st, Coord bound) {
-	return (st._y * bound._x) + st._x;
-}
-
 int blitPix(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord st, Col col) {
 	if (data == NULL) {
 		err(ERR_NULL_PTR);

@@ -8,7 +8,7 @@ BUILDDIR=build
 
 LDFLAGS=-lGL -lGLEW -lSDL2
 
-SRCS=main.c err.c
+SRCS=main.c err.c util.c
 OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
 
 HDRS=math.h col.h
