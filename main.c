@@ -5,6 +5,8 @@
 #include "col.h"
 #include "err.h"
 
+#define CHAN_NO 3 + 1
+
 const unsigned int res[2] = {
 	800,
 	600
@@ -14,7 +16,7 @@ unsigned int coordToIdx(Coord st, Coord bound) {
 	return (st._y * bound._x) + st._x;
 }
 
-int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
+int blitPix(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord st, Col col) {
 	if (data == NULL) {
 		err(ERR_NULL_PTR);
 
@@ -35,7 +37,7 @@ int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	return 0;
 }
 
-int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col col) {
+int blitRect(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord sz, Coord pos, Col col) {
 	if (data == NULL) {
 		err(ERR_NULL_PTR);
 
@@ -58,7 +60,7 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col
 	return 0;
 }
 
-int clear(unsigned char data[res[Y]][res[X]][3 + 1]) {
+int clear(unsigned char data[res[Y]][res[X]][CHAN_NO]) {
 	if (data == NULL) {
 		err(ERR_NULL_PTR);
 
@@ -86,12 +88,12 @@ int main() {
 
 	SDL_Texture* tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_TARGET, res[X], res[Y]);
 
-	unsigned char data[res[Y]][res[X]][3 + 1];
+	unsigned char data[res[Y]][res[X]][CHAN_NO];
 
 	// Clear
 	clear(data);
 
-	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (3 + 1) * 8, (3 + 1) * res[X], rmask, gmask, bmask, amask);
+	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (CHAN_NO) * 8, (CHAN_NO) * res[X], rmask, gmask, bmask, amask);
 
 	const SDL_Rect rect = {
 		0,
