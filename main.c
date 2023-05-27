@@ -16,13 +16,13 @@ unsigned int coordToIdx(Coord st, Coord bound) {
 
 int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 	if (data == NULL) {
-		err("Attempt to operate on null pointer");
+		err(ERR_NULL_PTR);
 
 		return 1;
 	}
 
 	if (!(st._x <= res[X] && st._y <= res[Y])) {
-		err("Pixel coordinate out of range");
+		err(ERR_PIXEL_COORD_BOUND);
 
 		return 1;
 	}
@@ -37,7 +37,7 @@ int blitPix(unsigned char data[res[Y]][res[X]][3 + 1], Coord st, Col col) {
 
 int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col col) {
 	if (data == NULL) {
-		err("Attempt to operate on null pointer");
+		err(ERR_NULL_PTR);
 
 		return 1;
 	}
@@ -50,7 +50,7 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col
 			};
 
 			if (blitPix(data, st, col)) {
-				err("Couldn't blit pixel");
+				err(ERR_BLIT_PIX);
 			}
 		}
 	}
@@ -60,7 +60,7 @@ int blitRect(unsigned char data[res[Y]][res[X]][3 + 1], Coord sz, Coord pos, Col
 
 int clear(unsigned char data[res[Y]][res[X]][3 + 1]) {
 	if (data == NULL) {
-		err("Attempt to operate on null pointer");
+		err(ERR_NULL_PTR);
 
 		return 1;
 	}
