@@ -102,6 +102,7 @@ int main() {
 
 	SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
 
+	// Draw
 	bool open = true;
 	SDL_Event e;
 	while (open) {
