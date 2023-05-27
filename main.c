@@ -86,19 +86,19 @@ int main() {
 
 	SDL_Texture* tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_TARGET, res[X], res[Y]);
 
-	SDL_Rect rect = {
-		0,
-		0,
-		res[X],
-		res[Y]
-	};
-
 	unsigned char data[res[Y]][res[X]][3 + 1];
 
 	// Clear
 	clear(data);
 
 	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (3 + 1) * 8, (3 + 1) * res[X], rmask, gmask, bmask, amask);
+
+	SDL_Rect rect = {
+		0,
+		0,
+		res[X],
+		res[Y]
+	};
 
 	SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
 
