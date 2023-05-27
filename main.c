@@ -93,9 +93,9 @@ int main() {
 		res[Y]
 	};
 
-	// Clear
 	unsigned char data[res[Y]][res[X]][3 + 1];
 
+	// Clear
 	clear(data);
 
 	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (3 + 1) * 8, (3 + 1) * res[X], rmask, gmask, bmask, amask);
