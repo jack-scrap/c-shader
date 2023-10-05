@@ -97,6 +97,19 @@ int main() {
 		res[X],
 		res[Y]
 	};
+	
+	for (int j = 0; j < res[Y]; j++) {
+		for (int i = 0; i < res[X]; i++) {
+			Coord st = {
+				i,
+				j
+			};
+
+			if (true) {
+				blitPix(data, st, red);
+			}
+		}
+	}
 
 	SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
 
