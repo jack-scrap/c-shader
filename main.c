@@ -4,6 +4,7 @@
 #include "math.h"
 #include "col.h"
 #include "blit.h"
+#include "shader.h"
 #include "err.h"
 
 #define CHAN_NO 3 + 1
@@ -12,10 +13,6 @@ const unsigned int res[2] = {
 	800,
 	600
 };
-
-int solid() {
-	return true;
-}
 
 int (*fn)() = solid;
 
