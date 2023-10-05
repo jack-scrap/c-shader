@@ -78,6 +78,12 @@ int clear(unsigned char data[res[Y]][res[X]][CHAN_NO]) {
 	return 0;
 }
 
+int solid() {
+	return true;
+}
+
+int (*fn)() = solid;
+
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
 	SDL_Renderer* rend = SDL_CreateRenderer(win, -1, 0);
@@ -105,7 +111,7 @@ int main() {
 				j
 			};
 
-			if (true) {
+			if (fn()) {
 				blitPix(data, st, red);
 			}
 		}
