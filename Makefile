@@ -8,10 +8,10 @@ BUILDDIR=build
 
 LDFLAGS=-lGL -lGLEW -lSDL2
 
-SRCS=main.c err.c util.c
+SRCS=main.c col.c blit.c err.c util.c
 OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
 
-HDRS=math.h col.h
+HDRS=math.h
 
 .PHONY: all
 all: mk_build $(EXEC)

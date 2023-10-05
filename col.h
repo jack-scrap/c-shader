@@ -1,6 +1,8 @@
 #ifndef COL_H
 #define COL_H
 
+#include <stdint.h>
+
 enum {
 	R,
 	G,
@@ -15,23 +17,13 @@ typedef struct {
 	unsigned int _a;
 } Col;
 
-uint32_t rmask = 0xff000000;
-uint32_t gmask = 0x00ff0000;
-uint32_t bmask = 0x0000ff00;
-uint32_t amask = 0x000000ff;
+extern uint32_t rmask;
+extern uint32_t gmask;
+extern uint32_t bmask;
+extern uint32_t amask;
 
-Col black = {
-	0,
-	0,
-	0,
-	255
-};
+extern Col black;
 
-Col red = {
-	255,
-	0,
-	0,
-	255
-};
+extern Col red;
 
 #endif
