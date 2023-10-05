@@ -4,7 +4,7 @@
 #include "math.h"
 #include "col.h"
 
-#define CHAN_NO 3 + 1
+#define CHAN_NO 3
 
 extern const unsigned int res[2];
 

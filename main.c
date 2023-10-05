@@ -7,7 +7,7 @@
 #include "shader.h"
 #include "err.h"
 
-#define CHAN_NO 3 + 1
+#define CHAN_NO 3
 
 const unsigned int res[2] = {
 	800,
@@ -20,7 +20,7 @@ int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
 	SDL_Renderer* rend = SDL_CreateRenderer(win, -1, 0);
 
-	SDL_Texture* tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_RGB888, SDL_TEXTUREACCESS_TARGET, res[X], res[Y]);
+	SDL_Texture* tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_RGB24, SDL_TEXTUREACCESS_TARGET, res[X], res[Y]);
 
 	unsigned char data[res[Y]][res[X]][CHAN_NO];
 

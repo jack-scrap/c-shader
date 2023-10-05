@@ -19,7 +19,6 @@ int blitPix(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord st, Col col) {
 	data[st._y][st._x][R] = col._r;
 	data[st._y][st._x][G] = col._g;
 	data[st._y][st._x][B] = col._b;
-	data[st._y][st._x][A] = col._a;
 
 	return 0;
 }
