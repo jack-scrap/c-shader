@@ -42,7 +42,7 @@ int main() {
 			};
 
 			if (fn()) {
-				blitPix(data, st, red);
+				blitPix(data, st, white);
 			}
 		}
 	}

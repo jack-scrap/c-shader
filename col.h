@@ -24,6 +24,8 @@ extern uint32_t amask;
 
 extern Col black;
 
+extern Col white;
+
 extern Col red;
 
 #endif

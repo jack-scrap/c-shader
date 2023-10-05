@@ -11,6 +11,12 @@ Col black = {
 	0
 };
 
+Col white = {
+	255,
+	255,
+	255
+};
+
 Col red = {
 	255,
 	0,
