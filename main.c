@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = solid;
+int (*fn)() = even;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -41,7 +41,7 @@ int main() {
 				j
 			};
 
-			if (fn()) {
+			if (fn(st)) {
 				blitPix(data, st, white);
 			}
 		}
