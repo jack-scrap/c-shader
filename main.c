@@ -25,7 +25,7 @@ int main() {
 	// Clear
 	clear(data);
 
-	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], (CHAN_NO) * 8, (CHAN_NO) * res[X], rmask, gmask, bmask, amask);
+	SDL_Surface* surf = SDL_CreateRGBSurfaceFrom(data, res[X], res[Y], CHAN_NO * 8, CHAN_NO * res[X], rmask, gmask, bmask, amask);
 
 	const SDL_Rect rect = {
 		0,
