@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = rect;
+int (*fn)() = sq;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -46,12 +46,7 @@ int main() {
 				70
 			};
 
-			Coord dim = {
-				120,
-				30
-			};
-
-			if (fn(st, start, dim)) {
+			if (fn(st, start, 120)) {
 				blitPix(data, st, white);
 			}
 		}

@@ -9,4 +9,6 @@ int even(Coord st);
 
 int rect(Coord st, Coord start, Coord dim);
 
+int sq(Coord st, Coord start, unsigned int ln);
+
 #endif

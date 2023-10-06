@@ -17,3 +17,12 @@ int rect(Coord st, Coord start, Coord dim) {
 		st._x > start._x && st._x < start._x + dim._x &&
 		st._y > start._y && st._y < start._y + dim._y;
 }
+
+int sq(Coord st, Coord start, unsigned int ln) {
+	Coord dim = {
+		ln,
+		ln
+	};
+
+	return rect(st, start, dim);
+}
