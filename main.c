@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = sq;
+int (*fn)() = hStripe;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -46,7 +46,7 @@ int main() {
 				70
 			};
 
-			if (fn(st, start, 120)) {
+			if (fn(j, 30)) {
 				blitPix(data, st, white);
 			}
 		}

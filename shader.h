@@ -11,4 +11,6 @@ int rect(Coord st, Coord loc, Coord dim);
 
 int sq(Coord st, Coord loc, unsigned int ln);
 
+int hStripe(unsigned int y, unsigned int thick);
+
 #endif

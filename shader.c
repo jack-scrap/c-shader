@@ -26,3 +26,7 @@ int sq(Coord st, Coord loc, unsigned int ln) {
 
 	return rect(st, loc, dim);
 }
+
+int hStripe(unsigned int y, unsigned int thick) {
+	return y % (thick * 2) > thick;
+}
