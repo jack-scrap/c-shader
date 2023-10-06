@@ -7,8 +7,8 @@ int solid();
 
 int even(Coord st);
 
-int rect(Coord st, Coord start, Coord dim);
+int rect(Coord st, Coord loc, Coord dim);
 
-int sq(Coord st, Coord start, unsigned int ln);
+int sq(Coord st, Coord loc, unsigned int ln);
 
 #endif
