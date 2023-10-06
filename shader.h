@@ -13,4 +13,6 @@ int sq(Coord st, Coord loc, unsigned int ln);
 
 int hStripe(unsigned int y, unsigned int thick);
 
+int vStripe(unsigned int x, unsigned int thick);
+
 #endif
