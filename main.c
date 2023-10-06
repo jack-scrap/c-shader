@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = even;
+int (*fn)() = rect;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -41,7 +41,17 @@ int main() {
 				j
 			};
 
-			if (fn(st)) {
+			Coord start = {
+				30,
+				70
+			};
+
+			Coord dim = {
+				120,
+				30
+			};
+
+			if (fn(st, start, dim)) {
 				blitPix(data, st, white);
 			}
 		}
