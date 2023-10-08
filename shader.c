@@ -34,3 +34,9 @@ int hStripe(unsigned int y, unsigned int thick) {
 int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
+
+int half(Coord st) {
+	const unsigned int ln = 184;
+
+	return st._x + st._y % ln > ln / 2;
+}
