@@ -8,8 +8,8 @@
 #include "err.h"
 
 const unsigned int res[2] = {
-	800,
-	600
+	184,
+	184
 };
 
 int (*fn)() = vStripe;
