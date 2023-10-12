@@ -1,6 +1,7 @@
 #include <stdbool.h>
 
 #include "shader.h"
+#include "layout.h"
 
 extern const unsigned int res[2];
 
@@ -56,7 +57,7 @@ int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
 }
 
 int hBar(Coord st, unsigned int x, unsigned int thick) {
-	unsigned int half = thick / 2;
+	unsigned int half = center(thick);
 
 	return
 		st._x < x + half &&
@@ -64,7 +65,7 @@ int hBar(Coord st, unsigned int x, unsigned int thick) {
 }
 
 int vBar(Coord st, unsigned int y, unsigned int thick) {
-	unsigned int half = thick / 2;
+	unsigned int half = center(thick);
 
 	return
 		st._y < y + half &&
