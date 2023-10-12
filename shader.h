@@ -17,4 +17,6 @@ int vStripe(unsigned int x, unsigned int thick);
 
 int dotGrid(Coord st, unsigned int stride);
 
+int border(Coord st, Coord loc, Coord dim, unsigned int thick);
+
 #endif

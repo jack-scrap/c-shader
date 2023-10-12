@@ -38,3 +38,19 @@ int vStripe(unsigned int x, unsigned int thick) {
 int dotGrid(Coord st, unsigned int stride) {
 	return !(st._x % stride || st._y % stride);
 }
+
+int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
+	Coord innerLoc = {
+		thick + loc._x,
+		thick + loc._y
+	};
+
+	Coord innerDim = {
+		dim._x - (thick * 2),
+		dim._y - (thick * 2)
+	};
+
+	return
+		rect(st, loc, dim) &&
+		!rect(st, innerLoc, innerDim);
+}

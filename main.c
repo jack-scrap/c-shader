@@ -34,24 +34,10 @@ int main() {
 		res[Y]
 	};
 	
-	for (int j = 0; j < res[Y]; j++) {
-		for (int i = 0; i < res[X]; i++) {
-			Coord st = {
-				i,
-				j
-			};
-
-			if (fn()) {
-				blitPix(data, st, white);
-			}
-		}
-	}
-
-	SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
-
 	// Draw
 	bool open = true;
 	SDL_Event e;
+	unsigned int t = 0;
 	while (open) {
 		while (SDL_PollEvent(&e)) {
 			if (e.type == SDL_QUIT) {
@@ -59,10 +45,27 @@ int main() {
 			}
 		}
 
+		for (int j = 0; j < res[Y]; j++) {
+			for (int i = 0; i < res[X]; i++) {
+				Coord st = {
+					i,
+					j
+				};
+
+				if (solid()) {
+					blitPix(data, st, white);
+				}
+			}
+		}
+
+		SDL_UpdateTexture(tex, &rect, surf->pixels, surf->pitch);
+
 		SDL_RenderDrawRect(rend, &rect);
 
 		SDL_RenderCopy(rend, tex, NULL, NULL);
 		SDL_RenderPresent(rend);
+
+		t++;
 	}
 
 	return 0;
