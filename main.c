@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = dotGrid;
+int (*fn)() = solid;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -41,7 +41,7 @@ int main() {
 				j
 			};
 
-			if (fn(st, 5)) {
+			if (fn()) {
 				blitPix(data, st, white);
 			}
 		}
