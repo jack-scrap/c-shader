@@ -19,4 +19,8 @@ int dotGrid(Coord st, unsigned int stride);
 
 int border(Coord st, Coord loc, Coord dim, unsigned int thick);
 
+int hBar(Coord st, unsigned int x, unsigned int thick);
+
+int vBar(Coord st, unsigned int y, unsigned int thick);
+
 #endif

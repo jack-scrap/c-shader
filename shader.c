@@ -54,3 +54,19 @@ int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
 		rect(st, loc, dim) &&
 		!rect(st, innerLoc, innerDim);
 }
+
+int hBar(Coord st, unsigned int x, unsigned int thick) {
+	unsigned int half = thick / 2;
+
+	return
+		st._x < x + half &&
+		st._x > x - half;
+}
+
+int vBar(Coord st, unsigned int y, unsigned int thick) {
+	unsigned int half = thick / 2;
+
+	return
+		st._y < y + half &&
+		st._y > y - half;
+}
