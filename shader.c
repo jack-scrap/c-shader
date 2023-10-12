@@ -2,6 +2,7 @@
 
 #include "shader.h"
 #include "layout.h"
+#include "util.h"
 
 extern const unsigned int res[2];
 
@@ -59,15 +60,11 @@ int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
 int hBar(Coord st, unsigned int x, unsigned int thick) {
 	unsigned int half = center(thick);
 
-	return
-		st._x < x + half &&
-		st._x > x - half;
+	return inRng(x, st._x - half, st._x + half);
 }
 
 int vBar(Coord st, unsigned int y, unsigned int thick) {
 	unsigned int half = center(thick);
 
-	return
-		st._y < y + half &&
-		st._y > y - half;
+	return inRng(y, st._y - half, st._y + half);
 }
