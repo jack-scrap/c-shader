@@ -12,7 +12,7 @@ const unsigned int res[2] = {
 	600
 };
 
-int (*fn)() = vStripe;
+int (*fn)() = dotGrid;
 
 int main() {
 	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
@@ -41,12 +41,7 @@ int main() {
 				j
 			};
 
-			Coord start = {
-				30,
-				70
-			};
-
-			if (fn(i, 30)) {
+			if (fn(st, 5)) {
 				blitPix(data, st, white);
 			}
 		}

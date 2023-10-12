@@ -34,3 +34,7 @@ int hStripe(unsigned int y, unsigned int thick) {
 int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
+
+int dotGrid(Coord st, unsigned int stride) {
+	return !(st._x % stride || st._y % stride);
+}
