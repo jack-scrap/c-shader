@@ -15,7 +15,7 @@ const unsigned int res[2] = {
 int (*fn)() = solid;
 
 int main() {
-	SDL_Window* win = SDL_CreateWindow("asdf", 0, 0, res[X], res[Y], 0);
+	SDL_Window* win = SDL_CreateWindow("Blit", 0, 0, res[X], res[Y], 0);
 	SDL_Renderer* rend = SDL_CreateRenderer(win, -1, 0);
 
 	SDL_Texture* tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_RGB24, SDL_TEXTUREACCESS_TARGET, res[X], res[Y]);
