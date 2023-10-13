@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <math.h>
 
 #include "shader.h"
 #include "layout.h"
@@ -77,4 +78,8 @@ int se(Coord st) {
 
 int tri(Coord st, unsigned int ln) {
 	return st._x + st._y < ln;
+}
+
+int sine(Coord st, int freq, float amp) {
+	return (st._y / (float) res[Y]) < sin((st._x * M_PI * 2 * freq) / (float) res[X]) * 0.3;
 }

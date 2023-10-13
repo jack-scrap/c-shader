@@ -27,4 +27,6 @@ int se(Coord st);
 
 int tri(Coord st, unsigned int ln);
 
+int sine(Coord st, int freq, float amp);
+
 #endif
