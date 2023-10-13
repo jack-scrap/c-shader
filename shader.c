@@ -53,9 +53,7 @@ int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
 		dim._y - (thick * 2)
 	};
 
-	return
-		rect(st, loc, dim) &&
-		!rect(st, innerLoc, innerDim);
+	return rect(st, loc, dim) && !rect(st, innerLoc, innerDim);
 }
 
 int hBar(Coord st, unsigned int x, unsigned int thick) {
