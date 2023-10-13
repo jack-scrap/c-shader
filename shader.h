@@ -25,4 +25,6 @@ int vBar(Coord st, unsigned int y, unsigned int thick);
 
 int se(Coord st);
 
+int tri(Coord st, unsigned int ln);
+
 #endif

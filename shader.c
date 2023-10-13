@@ -74,3 +74,7 @@ int se(Coord st) {
 
 	return hBar(st, 100, thick) || vBar(st, 100, thick);
 }
+
+int tri(Coord st, unsigned int ln) {
+	return st._x + st._y < ln;
+}
