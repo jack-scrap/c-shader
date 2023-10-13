@@ -29,4 +29,11 @@ int tri(Coord st, unsigned int ln);
 
 int sine(Coord st, int freq, float amp);
 
+// Bitwise
+int op_or(Coord st);
+
+int op_and(Coord st);
+
+int op_xor(Coord st);
+
 #endif

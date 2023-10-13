@@ -81,3 +81,16 @@ int tri(Coord st, unsigned int ln) {
 int sine(Coord st, int freq, float amp) {
 	return (norm(st._y, Y)) < sin(norm(st._x * M_PI * 2 * freq, X)) * 0.3;
 }
+
+// Bitwise
+int op_or(Coord st) {
+	return st._x | st._y;
+}
+
+int op_and(Coord st) {
+	return st._x & st._y;
+}
+
+int op_xor(Coord st) {
+	return st._x ^ st._y;
+}
