@@ -23,4 +23,6 @@ int hBar(Coord st, unsigned int x, unsigned int thick);
 
 int vBar(Coord st, unsigned int y, unsigned int thick);
 
+int se(Coord st);
+
 #endif

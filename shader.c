@@ -68,3 +68,9 @@ int vBar(Coord st, unsigned int y, unsigned int thick) {
 
 	return inRng(y, st._y - half, st._y + half);
 }
+
+int se(Coord st) {
+	unsigned int thick = 50;
+
+	return hBar(st, 100, thick) || vBar(st, 100, thick);
+}
