@@ -81,5 +81,5 @@ int tri(Coord st, unsigned int ln) {
 }
 
 int sine(Coord st, int freq, float amp) {
-	return (st._y / (float) res[Y]) < sin((st._x * M_PI * 2 * freq) / (float) res[X]) * 0.3;
+	return (norm(st._y, Y)) < sin(norm(st._x * M_PI * 2 * freq, X)) * 0.3;
 }
