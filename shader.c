@@ -52,9 +52,10 @@ int border(Coord st, Coord loc, Coord dim, unsigned int thick) {
 		thick + loc._y
 	};
 
+	unsigned int border = thick * 2;
 	Coord innerDim = {
-		dim._x - (thick * 2),
-		dim._y - (thick * 2)
+		dim._x - border,
+		dim._y - border
 	};
 
 	return rect(st, loc, dim) && !rect(st, innerLoc, innerDim);
