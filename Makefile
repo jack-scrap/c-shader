@@ -6,7 +6,7 @@ CC=gcc
 
 BUILDDIR=build
 
-LDFLAGS=-lGL -lGLEW -lSDL2 -lm
+LDFLAGS=-lGL -lGLEW -lSDL2 -lSDL2_image -lm
 
 SRCS=main.c col.c blit.c layout.c shader.c err.c util.c
 OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
