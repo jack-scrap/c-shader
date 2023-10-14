@@ -87,6 +87,17 @@ int sine(Coord st, int freq, float amp) {
 	return (norm(st._y, Y)) < sin(norm(st._x * M_PI * 2 * freq, X)) * 0.3;
 }
 
+int fizzBuzz(Coord st) {
+	Coord bound = {
+		res[X],
+		res[Y]
+	};
+
+	int i = coordToIdx(st, bound);
+
+	return !(i % 3) || !(i % 5);
+}
+
 // Bitwise
 int op_or(Coord st) {
 	return st._x | st._y;

@@ -31,6 +31,8 @@ int tri(Coord st, unsigned int ln);
 
 int sine(Coord st, int freq, float amp);
 
+int fizzBuzz(Coord st);
+
 // Bitwise
 int op_or(Coord st);
 
