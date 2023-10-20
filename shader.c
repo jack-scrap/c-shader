@@ -35,8 +35,11 @@ int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
 
-int half(Coord st) {
-	const unsigned int ln = 184;
+Coord localize(Coord st, Coord bound) {
+	Coord win = {
+		st._x % bound._x,
+		st._y % bound._y
+	};
 
-	return st._x + st._y % ln > ln / 2;
+	return win;
 }
