@@ -46,7 +46,7 @@ int diagStripe(Coord st, unsigned int thick) {
 	return (st._x + st._y) % (thick * 2) > thick;
 }
 
-int dotGrid(Coord st, unsigned int stride) {
+int dotMatrix(Coord st, unsigned int stride) {
 	return !(st._x % stride || st._y % stride);
 }
 

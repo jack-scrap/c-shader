@@ -19,7 +19,7 @@ int checker(Coord st);
 
 int diagStripe(Coord st, unsigned int thick);
 
-int dotGrid(Coord st, unsigned int stride);
+int dotMatrix(Coord st, unsigned int stride);
 
 int border(Coord st, Coord loc, Coord dim, unsigned int thick);
 
