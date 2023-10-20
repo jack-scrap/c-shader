@@ -15,6 +15,8 @@ int hStripe(unsigned int y, unsigned int thick);
 
 int vStripe(unsigned int x, unsigned int thick);
 
+int checker(Coord st);
+
 int diagStripe(Coord st, unsigned int thick);
 
 int dotGrid(Coord st, unsigned int stride);

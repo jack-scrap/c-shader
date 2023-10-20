@@ -38,6 +38,10 @@ int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
 
+int checker(Coord st) {
+	return (st._x % res[X] > res[X] / 2) ^ (st._y % res[Y] > res[Y] / 2);
+}
+
 int diagStripe(Coord st, unsigned int thick) {
 	return (st._x + st._y) % (thick * 2) > thick;
 }
