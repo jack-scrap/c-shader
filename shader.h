@@ -35,6 +35,8 @@ int sine(Coord st, int freq, float amp);
 
 int fizzBuzz(Coord st);
 
+int grid(Coord st, unsigned int stride);
+
 // Bitwise
 int op_or(Coord st);
 

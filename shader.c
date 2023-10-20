@@ -102,6 +102,12 @@ int fizzBuzz(Coord st) {
 	return !(i % 3) || !(i % 5);
 }
 
+int grid(Coord st, unsigned int stride) {
+	return
+		!(st._x % stride) ||
+		!(st._y % stride);
+}
+
 // Bitwise
 int op_or(Coord st) {
 	return st._x | st._y;
