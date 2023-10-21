@@ -6,6 +6,7 @@
 #include "col.h"
 #include "blit.h"
 #include "shader.h"
+#include "util.h"
 #include "err.h"
 
 const unsigned int res[2] = {
@@ -92,15 +93,24 @@ int main() {
 			}
 		}
 
-		for (int j = 0; j < res[Y]; j++) {
-			for (int i = 0; i < res[X]; i++) {
-				Coord st = {
-					i,
-					j
-				};
+		Coord bound = {
+			res[X],
+			res[Y]
+		};
 
-				if (fn()) {
-					blitPix(data, st, white);
+		for (int j = 0; j < res[Y]; j++) {
+			for (int i = 0; i < res[X]; i += sizeof (int)) {
+				for (int b = 0; b < sizeof (int); b++) {
+					Coord st = {
+						i + b,
+						j
+					};
+
+					unsigned int val = coordToIdx(st, bound);
+
+					if (((val & (1 << (b - 1))) ? 1 : 0)) {
+						blitPix(data, st, white);
+					}
 				}
 			}
 		}
