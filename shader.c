@@ -88,7 +88,7 @@ int tri(Coord st, unsigned int ln) {
 }
 
 int sine(Coord st, int freq, float amp) {
-	return (norm(st._y, Y)) < sin(norm(st._x * M_PI * 2 * freq, X)) * 0.3;
+	return norm(st._y, Y) < sin(norm(st._x * M_PI * 2 * freq, X)) * 0.3;
 }
 
 int fizzBuzz(Coord st) {
