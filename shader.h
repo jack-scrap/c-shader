@@ -15,6 +15,8 @@ int hStripe(unsigned int y, unsigned int thick);
 
 int vStripe(unsigned int x, unsigned int thick);
 
+int halfTri(Coord st);
+
 Coord localize(Coord st, Coord bound);
 
 #endif
