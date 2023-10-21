@@ -106,6 +106,17 @@ int grid(Coord st, unsigned int stride) {
 	return !(st._x % stride) || !(st._y % stride);
 }
 
+int el(Coord st, unsigned int idx) {
+	unsigned int margin = 8;
+
+	Coord loc = {
+		margin + (idx * margin * 2),
+		margin
+	};
+
+	return sq(st, loc, 32);
+}
+
 // Bitwise
 int op_or(Coord st) {
 	return st._x | st._y;

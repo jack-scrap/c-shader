@@ -37,6 +37,8 @@ int fizzBuzz(Coord st);
 
 int grid(Coord st, unsigned int stride);
 
+int el(Coord st, unsigned int idx);
+
 // Bitwise
 int op_or(Coord st);
 
