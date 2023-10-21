@@ -107,8 +107,6 @@ int grid(Coord st, unsigned int stride) {
 }
 
 int el(Coord st, unsigned int idx) {
-	unsigned int margin = 8;
-
 	Coord loc = {
 		margin + (idx * margin * 2),
 		margin
