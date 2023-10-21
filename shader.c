@@ -103,9 +103,7 @@ int fizzBuzz(Coord st) {
 }
 
 int grid(Coord st, unsigned int stride) {
-	return
-		!(st._x % stride) ||
-		!(st._y % stride);
+	return !(st._x % stride) || !(st._y % stride);
 }
 
 // Bitwise
