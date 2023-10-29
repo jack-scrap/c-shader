@@ -35,8 +35,60 @@ int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
 
-int halfTri(Coord st) {
-	return st._x < st._y;
+int sqOr(Coord st) {
+	unsigned int ln = 100;
+
+	Coord loc[2] = {
+		{
+			(184 / 2) - (ln / 2) - 16,
+			(184 / 2) - (ln / 2) - 16
+		}, {
+			(184 / 2) - (ln / 2) + 16,
+			(184 / 2) - (ln / 2) + 16
+		}
+	};
+
+	return sq(st, loc[0], ln) || sq(st, loc[1], ln);
+}
+
+int sqAnd(Coord st) {
+	unsigned int ln = 100;
+
+	Coord loc[2] = {
+		{
+			(184 / 2) - (ln / 2) - 16,
+			(184 / 2) - (ln / 2) - 16
+		}, {
+			(184 / 2) - (ln / 2) + 16,
+			(184 / 2) - (ln / 2) + 16
+		}
+	};
+
+	return sq(st, loc[0], ln) && sq(st, loc[1], ln);
+}
+
+int sqXor(Coord st) {
+	unsigned int ln = 100;
+
+	Coord loc[2] = {
+		{
+			(184 / 2) - (ln / 2) - 16,
+			(184 / 2) - (ln / 2) - 16
+		}, {
+			(184 / 2) - (ln / 2) + 16,
+			(184 / 2) - (ln / 2) + 16
+		}
+	};
+
+	return sq(st, loc[0], ln) ^ sq(st, loc[1], ln);
+}
+
+int diagStripe(Coord st, unsigned int thick) {
+	return (st._x + st._y) % (thick * 2) > thick;
+}
+
+int checker(Coord st, unsigned int ln) {
+	return ((st._x % ln > ln / 2) ^ (st._y % ln > ln / 2)) && diagStripe(st, 184 / 8);
 }
 
 Coord localize(Coord st, Coord bound) {

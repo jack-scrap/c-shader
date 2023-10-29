@@ -87,7 +87,7 @@ int main() {
 				70
 			};
 
-			if (fn(i, 30)) {
+			if (fn(st, 30)) {
 				blitPix(data, st, white);
 			}
 		}
