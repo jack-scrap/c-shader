@@ -13,7 +13,7 @@ const unsigned int res[2] = {
 	184
 };
 
-int (*fn)() = half;
+int (*fn)() = solid;
 
 bool scrShot(char* filepath, SDL_Window* SDLWindow, SDL_Renderer* SDLRenderer) {
 	SDL_Surface* saveSurface = NULL;
@@ -87,7 +87,7 @@ int main() {
 				70
 			};
 
-			if (fn(st, 30)) {
+			if (fn(st)) {
 				blitPix(data, st, white);
 			}
 		}

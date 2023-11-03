@@ -35,6 +35,10 @@ int vStripe(unsigned int x, unsigned int thick) {
 	return x % (thick * 2) > thick;
 }
 
+int halfTri(Coord st) {
+	return st._x < st._y;
+}
+
 int sqOr(Coord st) {
 	unsigned int ln = 100;
 
