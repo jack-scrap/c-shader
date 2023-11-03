@@ -39,6 +39,10 @@ int halfTri(Coord st) {
 	return st._x < st._y;
 }
 
+int quadTri(Coord st) {
+	return halfTri(st) ^ (184 - st._x < st._y);
+}
+
 int sqOr(Coord st) {
 	unsigned int ln = 100;
 
