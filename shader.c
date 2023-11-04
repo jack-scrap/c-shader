@@ -49,11 +49,11 @@ int sqOr(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - (margin * 2),
-			(pfpLn / 2) - (ln / 2) - (margin * 2)
+			center(pfpLn) - center(ln) - (margin * 2),
+			center(pfpLn) - center(ln) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + (margin * 2),
-			(pfpLn / 2) - (ln / 2) + (margin * 2)
+			center(pfpLn) - center(ln) + (margin * 2),
+			center(pfpLn) - center(ln) + (margin * 2)
 		}
 	};
 
@@ -65,11 +65,11 @@ int sqAnd(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - (margin * 2),
-			(pfpLn / 2) - (ln / 2) - (margin * 2)
+			center(pfpLn) - center(ln) - (margin * 2),
+			center(pfpLn) - center(ln) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + (margin * 2),
-			(pfpLn / 2) - (ln / 2) + (margin * 2)
+			center(pfpLn) - center(ln) + (margin * 2),
+			center(pfpLn) - center(ln) + (margin * 2)
 		}
 	};
 
@@ -81,11 +81,11 @@ int sqXor(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - (margin * 2),
-			(pfpLn / 2) - (ln / 2) - (margin * 2)
+			center(pfpLn) - center(ln) - (margin * 2),
+			center(pfpLn) - center(ln) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + (margin * 2),
-			(pfpLn / 2) - (ln / 2) + (margin * 2)
+			center(pfpLn) - center(ln) + (margin * 2),
+			center(pfpLn) - center(ln) + (margin * 2)
 		}
 	};
 
@@ -97,7 +97,7 @@ int diagStripe(Coord st, unsigned int thick) {
 }
 
 int checker(Coord st, unsigned int ln) {
-	return ((st._x % ln > ln / 2) ^ (st._y % ln > ln / 2)) && diagStripe(st, pfpLn / 8);
+	return ((st._x % ln > center(ln)) ^ (st._y % ln > center(ln))) && diagStripe(st, pfpLn / 8);
 }
 
 Coord localize(Coord st, Coord bound) {
