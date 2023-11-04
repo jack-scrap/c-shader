@@ -10,7 +10,7 @@ ODIR=o
 
 LDFLAGS=-lGL -lGLEW -lSDL2 -lSDL2_image
 
-SRCS=main.c col.c blit.c shader.c err.c util.c
+SRCS=main.c col.c blit.c shader.c layout.c err.c util.c
 OBJS=$(SRCS:%.c=$(BUILDDIR)/%.o)
 
 HDRS=math.h
