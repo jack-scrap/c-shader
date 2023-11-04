@@ -49,11 +49,11 @@ int sqOr(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - 16,
-			(pfpLn / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - (margin * 2),
+			(pfpLn / 2) - (ln / 2) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + 16,
-			(pfpLn / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + (margin * 2),
+			(pfpLn / 2) - (ln / 2) + (margin * 2)
 		}
 	};
 
@@ -65,11 +65,11 @@ int sqAnd(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - 16,
-			(pfpLn / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - (margin * 2),
+			(pfpLn / 2) - (ln / 2) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + 16,
-			(pfpLn / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + (margin * 2),
+			(pfpLn / 2) - (ln / 2) + (margin * 2)
 		}
 	};
 
@@ -81,11 +81,11 @@ int sqXor(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(pfpLn / 2) - (ln / 2) - 16,
-			(pfpLn / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - (margin * 2),
+			(pfpLn / 2) - (ln / 2) - (margin * 2)
 		}, {
-			(pfpLn / 2) - (ln / 2) + 16,
-			(pfpLn / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + (margin * 2),
+			(pfpLn / 2) - (ln / 2) + (margin * 2)
 		}
 	};
 
