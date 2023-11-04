@@ -1,6 +1,7 @@
 #include <stdbool.h>
 
 #include "shader.h"
+#include "layout.h"
 
 extern const unsigned int res[2];
 
@@ -40,7 +41,7 @@ int halfTri(Coord st) {
 }
 
 int quadTri(Coord st) {
-	return halfTri(st) ^ (184 - st._x < st._y);
+	return halfTri(st) ^ (pfpLn - st._x < st._y);
 }
 
 int sqOr(Coord st) {
@@ -48,11 +49,11 @@ int sqOr(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(184 / 2) - (ln / 2) - 16,
-			(184 / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - 16,
+			(pfpLn / 2) - (ln / 2) - 16
 		}, {
-			(184 / 2) - (ln / 2) + 16,
-			(184 / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + 16,
+			(pfpLn / 2) - (ln / 2) + 16
 		}
 	};
 
@@ -64,11 +65,11 @@ int sqAnd(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(184 / 2) - (ln / 2) - 16,
-			(184 / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - 16,
+			(pfpLn / 2) - (ln / 2) - 16
 		}, {
-			(184 / 2) - (ln / 2) + 16,
-			(184 / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + 16,
+			(pfpLn / 2) - (ln / 2) + 16
 		}
 	};
 
@@ -80,11 +81,11 @@ int sqXor(Coord st) {
 
 	Coord loc[2] = {
 		{
-			(184 / 2) - (ln / 2) - 16,
-			(184 / 2) - (ln / 2) - 16
+			(pfpLn / 2) - (ln / 2) - 16,
+			(pfpLn / 2) - (ln / 2) - 16
 		}, {
-			(184 / 2) - (ln / 2) + 16,
-			(184 / 2) - (ln / 2) + 16
+			(pfpLn / 2) - (ln / 2) + 16,
+			(pfpLn / 2) - (ln / 2) + 16
 		}
 	};
 
@@ -96,7 +97,7 @@ int diagStripe(Coord st, unsigned int thick) {
 }
 
 int checker(Coord st, unsigned int ln) {
-	return ((st._x % ln > ln / 2) ^ (st._y % ln > ln / 2)) && diagStripe(st, 184 / 8);
+	return ((st._x % ln > ln / 2) ^ (st._y % ln > ln / 2)) && diagStripe(st, pfpLn / 8);
 }
 
 Coord localize(Coord st, Coord bound) {
