@@ -82,11 +82,6 @@ int main() {
 				j
 			};
 
-			Coord start = {
-				30,
-				70
-			};
-
 			if (fn(st)) {
 				blitPix(data, st, white);
 			}
