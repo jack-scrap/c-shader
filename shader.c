@@ -10,13 +10,13 @@ int solid() {
 }
 
 int even(Coord st) {
-	return ((st._y * res[Y]) + st._x) % 2;
+	return ((st.y * res[Y]) + st.x) % 2;
 }
 
 int rect(Coord st, Coord loc, Coord dim) {
 	return
-		st._x > loc._x && st._x < loc._x + dim._x &&
-		st._y > loc._y && st._y < loc._y + dim._y;
+		st.x > loc.x && st.x < loc.x + dim.x &&
+		st.y > loc.y && st.y < loc.y + dim.y;
 }
 
 int sq(Coord st, Coord loc, unsigned int ln) {
@@ -37,11 +37,11 @@ int vStripe(unsigned int x, unsigned int thick) {
 }
 
 int halfTri(Coord st) {
-	return st._x < st._y;
+	return st.x < st.y;
 }
 
 int quadTri(Coord st) {
-	return halfTri(st) ^ (pfpLn - st._x < st._y);
+	return halfTri(st) ^ (pfpLn - st.x < st.y);
 }
 
 int sqOr(Coord st) {
@@ -93,17 +93,17 @@ int sqXor(Coord st) {
 }
 
 int diagStripe(Coord st, unsigned int thick) {
-	return (st._x + st._y) % (thick * 2) > thick;
+	return (st.x + st.y) % (thick * 2) > thick;
 }
 
 int checker(Coord st, unsigned int ln) {
-	return ((st._x % ln > center(ln)) ^ (st._y % ln > center(ln))) && diagStripe(st, pfpLn / 8);
+	return ((st.x % ln > center(ln)) ^ (st.y % ln > center(ln))) && diagStripe(st, pfpLn / 8);
 }
 
 Coord localize(Coord st, Coord bound) {
 	Coord win = {
-		st._x % bound._x,
-		st._y % bound._y
+		st.x % bound.x,
+		st.y % bound.y
 	};
 
 	return win;

@@ -10,15 +10,15 @@ int blitPix(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord st, Col col) {
 		return 1;
 	}
 
-	if (!(st._x <= res[X] && st._y <= res[Y])) {
+	if (!(st.x <= res[X] && st.y <= res[Y])) {
 		err(ERR_PIXEL_COORD_BOUND);
 
 		return 1;
 	}
 
-	data[st._y][st._x][R] = col._r;
-	data[st._y][st._x][G] = col._g;
-	data[st._y][st._x][B] = col._b;
+	data[st.y][st.x][R] = col._r;
+	data[st.y][st.x][G] = col._g;
+	data[st.y][st.x][B] = col._b;
 
 	return 0;
 }
@@ -30,11 +30,11 @@ int blitRect(unsigned char data[res[Y]][res[X]][CHAN_NO], Coord sz, Coord pos, C
 		return 1;
 	}
 
-	for (int y = 0; y < sz._y; y++) {
-		for (int x = 0; x < sz._x; x++) {
+	for (int y = 0; y < sz.y; y++) {
+		for (int x = 0; x < sz.x; x++) {
 			Coord st = {
-				pos._x + x,
-				pos._y + y
+				pos.x + x,
+				pos.y + y
 			};
 
 			if (blitPix(data, st, col)) {
