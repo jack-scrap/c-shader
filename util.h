@@ -5,4 +5,6 @@
 
 unsigned int coordToIdx(Coord st, Coord bound);
 
+Coord localize(Coord st, Coord bound);
+
 #endif

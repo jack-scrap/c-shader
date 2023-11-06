@@ -25,6 +25,4 @@ int sqAnd(Coord st);
 
 int sqXor(Coord st);
 
-Coord localize(Coord st, Coord bound);
-
 #endif

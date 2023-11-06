@@ -99,12 +99,3 @@ int diagStripe(Coord st, unsigned int thick) {
 int checker(Coord st, unsigned int ln) {
 	return ((st.x % ln > center(ln)) ^ (st.y % ln > center(ln))) && diagStripe(st, pfpLn / 8);
 }
-
-Coord localize(Coord st, Coord bound) {
-	Coord win = {
-		st.x % bound.x,
-		st.y % bound.y
-	};
-
-	return win;
-}
