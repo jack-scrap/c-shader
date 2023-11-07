@@ -25,4 +25,6 @@ int sqAnd(Coord* st);
 
 int sqXor(Coord* st);
 
+int shade(Coord* st, unsigned int lvl);
+
 #endif

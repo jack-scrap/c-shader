@@ -99,3 +99,12 @@ int diagStripe(Coord* st, unsigned int thick) {
 int checker(Coord* st, unsigned int ln) {
 	return ((st->x % ln > center(ln)) ^ (st->y % ln > center(ln))) && diagStripe(st, pfpLn / 8);
 }
+
+int shade(Coord* st, unsigned int lvl) {
+	Coord bound = {
+		pfpLn,
+		pfpLn
+	};
+
+	return !(coordToIdx(st, &bound) % lvl);
+}
