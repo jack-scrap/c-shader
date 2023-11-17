@@ -2,6 +2,7 @@
 
 #include "shader.h"
 #include "layout.h"
+#include "util.h"
 
 extern const unsigned int res[2];
 
