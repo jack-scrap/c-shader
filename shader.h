@@ -27,4 +27,6 @@ int sqXor(Coord* st);
 
 int shade(Coord* st, unsigned int lvl);
 
+int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick);
+
 #endif

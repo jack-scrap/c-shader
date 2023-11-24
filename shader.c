@@ -109,3 +109,17 @@ int shade(Coord* st, unsigned int lvl) {
 
 	return !(coordToIdx(st, &bound) % lvl);
 }
+
+int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick) {
+	Coord outerDim = {
+		dim->x + (thick * 2),
+		dim->y + (thick * 2)
+	};
+
+	Coord innerLoc = {
+		loc->x + thick,
+		loc->y + thick
+	};
+
+	return rect(st, loc, &outerDim) && !rect(st, &innerLoc, dim);
+}
