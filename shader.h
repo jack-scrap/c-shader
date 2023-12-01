@@ -29,4 +29,6 @@ int shade(Coord* st, unsigned int lvl);
 
 int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick);
 
+int stripeBorderHor(Coord* st);
+
 #endif

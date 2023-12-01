@@ -123,3 +123,12 @@ int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick) {
 
 	return rect(st, loc, &outerDim) && !rect(st, &innerLoc, dim);
 }
+
+int stripeBorderHor(Coord* st) {
+	unsigned int thick = 25;
+
+	return
+		st->y > center(pfpLn) - thick && st->y < center(pfpLn) + thick ||
+		st->y > -(thick + (margin * 2)) + center(pfpLn) - margin && st->y < -(thick + (margin * 2)) + center(pfpLn) + margin ||
+		st->y > (thick + (margin * 2)) + center(pfpLn) - margin && st->y < (thick + (margin * 2)) + center(pfpLn) + margin;
+}
