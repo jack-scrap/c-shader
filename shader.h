@@ -31,4 +31,6 @@ int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick);
 
 int stripeBorderHor(Coord* st);
 
+int stripeBorderVert(Coord* st);
+
 #endif

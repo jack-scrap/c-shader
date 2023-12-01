@@ -132,3 +132,12 @@ int stripeBorderHor(Coord* st) {
 		st->y > -(thick + (margin * 2)) + center(pfpLn) - margin && st->y < -(thick + (margin * 2)) + center(pfpLn) + margin ||
 		st->y > (thick + (margin * 2)) + center(pfpLn) - margin && st->y < (thick + (margin * 2)) + center(pfpLn) + margin;
 }
+
+int stripeBorderVert(Coord* st) {
+	unsigned int thick = 25;
+
+	return
+		st->y > center(pfpLn) - thick && st->y < center(pfpLn) + thick ||
+		st->y > -(thick + (margin * 2)) + center(pfpLn) - margin && st->y < -(thick + (margin * 2)) + center(pfpLn) + margin ||
+		st->y > (thick + (margin * 2)) + center(pfpLn) - margin && st->y < (thick + (margin * 2)) + center(pfpLn) + margin;
+}
