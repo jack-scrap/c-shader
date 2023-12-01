@@ -7,4 +7,6 @@ unsigned int coordToIdx(Coord* st, Coord* bound);
 
 Coord localize(Coord* st, Coord* bound);
 
+int inRng(int val, int floor, int roof);
+
 #endif

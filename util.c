@@ -12,3 +12,7 @@ Coord localize(Coord* st, Coord* bound) {
 
 	return win;
 }
+
+int inRng(int val, int floor, int roof) {
+	return val >= floor && val <= roof;
+}
