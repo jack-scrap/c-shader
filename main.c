@@ -79,7 +79,7 @@ int main() {
 		for (int i = 0; i < res[X]; i++) {
 			Coord st = {
 				i,
-				j
+				res[Y] - j
 			};
 
 			if (fn(&st)) {
