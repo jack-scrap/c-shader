@@ -37,4 +37,6 @@ int stripeBorderHor(Coord* st);
 
 int stripeBorderVert(Coord* st);
 
+int x(Coord* st);
+
 #endif
