@@ -25,6 +25,10 @@ int sqAnd(Coord* st);
 
 int sqXor(Coord* st);
 
+int diagStripe(Coord* st, unsigned int thick);
+
+int checker(Coord* st, unsigned int ln);
+
 int shade(Coord* st, unsigned int lvl);
 
 int border(Coord* st, Coord* loc, Coord* dim, unsigned int thick);
